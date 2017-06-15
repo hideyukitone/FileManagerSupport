@@ -1,14 +1,18 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="FileManagerSupport" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +20,52 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BrB-Mo-Fsi">
+                                <rect key="frame" x="0.0" y="20" width="375" height="508"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zKI-Yn-2pO">
+                                <rect key="frame" x="149" y="569" width="77" height="43"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="43" id="5Q2-Rw-NHi"/>
+                                    <constraint firstAttribute="width" constant="77" id="zbS-Bs-6em"/>
+                                </constraints>
+                                <state key="normal" title="選択"/>
+                                <connections>
+                                    <action selector="pressSelect:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sms-wp-XcU"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bnC-Dp-wmL">
+                                <rect key="frame" x="149" y="617" width="77" height="43"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="77" id="28C-TX-zEk"/>
+                                    <constraint firstAttribute="height" constant="43" id="eXE-ws-n02"/>
+                                </constraints>
+                                <state key="normal" title="削除"/>
+                                <connections>
+                                    <action selector="pressDelete:" destination="BYZ-38-t0r" eventType="touchUpInside" id="d5A-RK-EFG"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="bnC-Dp-wmL" firstAttribute="top" secondItem="zKI-Yn-2pO" secondAttribute="bottom" constant="5" id="6Sg-jr-HPm"/>
+                            <constraint firstItem="BrB-Mo-Fsi" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="BD0-NY-1Ou"/>
+                            <constraint firstItem="BrB-Mo-Fsi" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="YQt-OH-s7U"/>
+                            <constraint firstItem="zKI-Yn-2pO" firstAttribute="top" secondItem="BrB-Mo-Fsi" secondAttribute="bottom" constant="41" id="ZlG-7p-qLe"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="bnC-Dp-wmL" secondAttribute="bottom" constant="7" id="eLo-CT-plk"/>
+                            <constraint firstItem="zKI-Yn-2pO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="h2C-kJ-Sxa"/>
+                            <constraint firstItem="bnC-Dp-wmL" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="nMR-VV-nXd"/>
+                            <constraint firstAttribute="trailing" secondItem="BrB-Mo-Fsi" secondAttribute="trailing" id="ohK-Qd-1De"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="imageView" destination="BrB-Mo-Fsi" id="xEC-wM-rkT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="138.98050974512745"/>
         </scene>
     </scenes>
 </document>
